@@ -45,13 +45,6 @@ spec:
             httpGet:
               path: /
               port: http
-          volumeMounts:
-            - name: html
-              mountPath: /usr/share/nginx/html
-      volumes:
-        - name: html
-          configMap:
-            name: {{ .Release.Name }}-index-html        
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
