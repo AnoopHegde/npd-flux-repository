@@ -3,7 +3,6 @@ kind: HelmRelease
 metadata:
   name: nginx
   namespace: nginx-fluxcd
-  createNamespace: true
 spec:
   interval: 1m
   chart:
