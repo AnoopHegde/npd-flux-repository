@@ -40,6 +40,10 @@ spec:
           volumeMounts:
             - name: html
               mountPath: /usr/share/nginx/html
+      volumes:
+        - name: html
+          configMap:
+            name: {{ .Release.Name }}-index-html        
               
           livenessProbe:
             httpGet:
