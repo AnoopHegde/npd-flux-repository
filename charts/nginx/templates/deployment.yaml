@@ -37,6 +37,10 @@ spec:
             - name: http
               containerPort: {{ .Values.service.port }}
               protocol: TCP
+          volumeMounts:
+            - name: html
+              mountPath: /usr/share/nginx/html
+              
           livenessProbe:
             httpGet:
               path: /
