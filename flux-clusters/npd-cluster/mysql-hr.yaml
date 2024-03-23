@@ -13,7 +13,7 @@ spec:
         kind: HelmRepository
         name: mysql
         namespace: default
-        path: ./apps/base/sources
+        path: ./apps/base/sources/bitnami-oci.yaml
         prune: true
       interval: 1m
   values:
