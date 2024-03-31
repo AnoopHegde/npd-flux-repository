@@ -13,7 +13,7 @@ spec:
   prune: true # remove any elements later removed from the above path
   timeout: 2m # if not set, this defaults to interval duration, which is 1h
   sourceRef:
-    kind: GitRepository
+    kind: HelmRepository
     name: flux-system
     healthChecks:
     - apiVersion: apps/v1
