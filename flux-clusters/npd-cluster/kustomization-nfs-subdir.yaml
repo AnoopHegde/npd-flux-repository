@@ -7,7 +7,7 @@ spec:
   dependsOn:
     - name: sources
   interval: 1m0s
-  path: ./nfs-subdir
+  path: ./flux-clusters/npd-cluster
   prune: false
   timeout: 2m
   sourceRef:
