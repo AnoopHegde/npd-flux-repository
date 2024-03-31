@@ -1,0 +1,22 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: kustomization
+metadata:
+  name: nfs-subdir
+  namespace: flux-system
+resources:
+  - configmap.yaml
+  - nfs-provisioner-hr.yaml
+  - nfs-provisioner-ns.yaml
+spec:
+  interval: 15m
+  path: nfs-subdir
+  prune: true # remove any elements later removed from the above path
+  timeout: 2m # if not set, this defaults to interval duration, which is 1h
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+    healthChecks:
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: nfs-subdir-external-provisioner
+      namespace: nfs-suibdir    
