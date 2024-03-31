@@ -13,4 +13,4 @@ data:
          - hard
          - nfsvers=4.1
     storageClass:
-      defaultClass: false          
+      defaultClass: true          
