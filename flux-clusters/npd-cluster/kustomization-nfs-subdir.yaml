@@ -4,8 +4,6 @@ metadata:
   name: nfs-subdir
   namespace: flux-system
 spec:
-  dependsOn:
-    - name: sources
   interval: 1m0s
   path: ./flux-clusters/npd-cluster
   prune: false
