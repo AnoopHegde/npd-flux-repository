@@ -4,12 +4,14 @@ metadata:
   name: nfs-subdir
   namespace: flux-system
 spec:
-  interval: 15m
+  dependsOn:
+    - name: sources
+  interval: 1m0s
   path: ./nfs-subdir
-  prune: true
+  prune: false
   timeout: 2m
   sourceRef:
-    kind: GitRepository
+    kind: HelmRepository
     name: flux-system
     #healthChecks:
     #- apiVersion: apps/v1
